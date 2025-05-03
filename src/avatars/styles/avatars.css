@@ -1,1 +1,41 @@
 /* 여기에 스타일을 구현해 주세요 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+span {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+span.online {
+  background-color: #4cfe88;
+}
+span.offline {
+  background-color: #dbdbdb;
+}
+
+.allImgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 64px);
+  grid-template-rows: repeat(2, 64px);
+  gap: 20px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}
+
+.avatars {
+  position: relative;
+}
