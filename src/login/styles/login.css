@@ -1,1 +1,54 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  /* 글자크기 */
+  --basicFontSize: 1rem;
+  --inputFontSize: 0.875rem;
+  /* 글자색상 */
+  --basicFontColor: #121212;
+  /*  */
+  --focusFontColor: #24388d;
+
+  /* 입력서식 색상 */
+
+  /* 입력서식 크기 */
+  --blockHeight: 2.8125rem;
+}
+
+body {
+  margin: 3.125rem;
+}
+
+.login_form {
+  border: 0.1875rem solid green;
+  width: 100%;
+
+  .main_logo {
+    margin-inline: auto;
+    display: block;
+    width: fit-content;
+  }
+
+  .form_input {
+    border: 2px solid tan;
+
+    label {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    input {
+      font-size: var(--inputFontSize);
+      border: 3px solid #24388d;
+      width: 100%;
+      height: var(--blockHeight);
+    }
+  }
+
+  .login_button {
+    background-color: #03cf5d;
+    font-size: var(--basicFontSize);
+    color: #fff;
+    height: var(--blockHeight);
+    padding: auto;
+  }
+}
