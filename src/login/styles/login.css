@@ -1,4 +1,16 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 :root {
   /* 기본 텍스트 */
   --fontSizeBase: 16px;
@@ -10,8 +22,8 @@
   --marginTopSwitch: 10px;
 
   /* 포커스 스타일 */
-  --focusColorBorder: #03cf5d;
-  --focusColorBg: #e9f0fd;
+  --inputFocusColorBorder: #03cf5d;
+  --inputFocusColorBg: #e9f0fd;
   --focusColorOutline: #24388d;
 
   /* 입력 서식 */
@@ -42,6 +54,17 @@
 /* 폼스타일링 */
 body {
   margin: 50px;
+}
+
+/* 포커스 상태 설정 */
+:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focusColorOutline);
+  outline-offset: 2px;
 }
 
 /* 컴포넌트 컨테이너 */
@@ -76,6 +99,7 @@ body {
     width: 100%;
     font-size: var(--inputFontSize);
     line-height: var(--inputHeight);
+    box-sizing: border-box;
   }
 }
 
@@ -98,14 +122,20 @@ label {
 
 /* 공통 체크박스 스타일링 */
 [type='checkbox'] {
-  display: none;
   font-size: var(--fontSizeBase);
   color: var(--fontColorBase);
+  appearance: none;
+  opacity: 0;
 }
 
 /* 체크박스 클릭시 이미지 변경  */
 [type='checkbox']#form_check_0:checked + img {
   content: url(../assets/login_checked.svg);
+}
+
+/* 포커스 스타일 추가 */
+label:focus-within {
+  border: 2px solid var(--inputFocusColorBorder);
 }
 
 /* 온오프 체크박스 스타일링 */
@@ -117,11 +147,18 @@ label {
 }
 
 /* 온오프 체크박스 클릭 시 텍스트 변경 */
-.on_off::before {
+/* .on_off_label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+} */
+
+#form_on_off_checkbox_0:not(:checked) + .on_off::before {
   content: 'OFF';
   color: var(--inputBorderColor);
 }
-#form_on_off_checkbox_0:checked + label .on_off::before {
+
+#form_on_off_checkbox_0:checked + .on_off::before {
   content: 'ON';
-  color: var(--focusColorBorder);
+  color: var(--buttonBgColor);
 }
