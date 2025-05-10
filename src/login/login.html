@@ -5,10 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
-    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
-    <link rel="stylesheet" href="/src/common/index.css" />
-    <link rel="stylesheet" href="/src/login/styles/login.css" />
+    <link rel="stylesheet" href="../common/index.css" />
+    <link rel="stylesheet" href="../login/styles/login.css" />
   </head>
   <body>
     <a href="/index.html">Go back</a><br />
@@ -44,10 +42,7 @@
       <!-- on/off check box -->
       <div class="form_on_off_checkbox">
         <a href="/" target="_blank" rel="noopener noreferrer">checkbox text</a>
-        <label for="form_on_off_checkbox_0" class="on_off_label">
-          <input type="checkbox" id="form_on_off_checkbox_0" name="is_on" />
-          <span class="on_off"> </span>
-        </label>
+        <label for="form_on_off_checkbox_0" class="on_off_label"> <input type="checkbox" id="form_on_off_checkbox_0" name="is_on" /><span class="on_off"> </span> </label>
       </div>
     </div>
 
@@ -61,47 +56,45 @@
         </a>
       </div>
       <div class="login_input_wrapper">
-        <div class="id_input">
+        <div class="user_input">
           <div class="form_input">
             <label for="form_input_id">아이디</label>
-            <input type="eamil" name="user_id" id="form_input_id" required placeholder="아이디" />
+            <input type="email" name="user_id" id="form_input_id" required placeholder="아이디" />
+          <small>아이디는 이메일 형식으로 입력해 주세요<div class=""></div></small>
           </div>
         </div>
-        <div class="password_input">
+        <div class="user_input">
           <div class="form_input">
-            <label for="form_input_password">레이블</label>
-            <input type="password" name="user_password" id="form_input_password" required placeholder="비밀번호" />
+            <label for="form_input_password">비밀번호</label>
+            <input type="password" name="user_password" id="form_input_password" required minlength="10" placeholder="비밀번호" />
+          <small>비밀번호는 10자리 이상 입력해 주세요.</small>
           </div>
-        </div>
-        <div class="login_submit">
-          <button class="submit_button" type="button">로그인</button>
         </div>
       </div>
-
-
+      <div class="login_button_wrapper">
+        <button class="submit_button" type="submit">로그인</button>
+      </div>
       <div class="option_wrapper">
-          <ul option_list>
-            <li class="keep_logged_in">
-              <div class="keep_logged_in_checkbox">
-                <label for="keep_logged_in_check">
-                  <input type="checkbox" id="keep_logged_in_check" name="keep_logged_in" />
-                  <img src="../login/assets/login_unchecked.svg" alt="로그인 상태 유지 버튼, 클릭 시 로그인 상태를 계속 유지합니다" />
-                  로그인 상태 유지
-                </label>
-              </div>
-            </li>
-            <li class="ip_seurity">
-              <div class="IP_security_checkbox">
-                <a href="/" target="_blank" rel="noopener noreferrer">IP 보안</a>
-                <label for="IP_security_checkbox" class="on_off_label">
-                  <input type="checkbox" id="IP_security_checkbox" name="IP_protection" />
-                  <span class="on_off"> </span>
-                </label>
-              </div>
-            </li>
-          </ul>
-        </div>  
-
+        <ul option_list>
+          <li class="keep_logged_in">
+            <div class="keep_logged_in_checkbox">
+              <label for="keep_logged_in_check">
+                <input type="checkbox" id="keep_logged_in_check" name="keep_logged_in" />
+                <img src="../login/assets/login_unchecked.svg" alt="로그인 상태 유지 버튼, 클릭 시 로그인 상태를 계속 유지합니다" />
+                로그인 상태 유지
+              </label>
+            </div>
+          </li>
+          <li class="ip_seurity">
+            <div class="IP_security_checkbox">
+              <a href="../login/pages/ip_security.html" target="_blank" rel="noopener noreferrer">IP 보안</a>
+              <label for="IP_security_checkbox" class="on_off_label">
+                <input type="checkbox" id="IP_security_checkbox" name="IP_protection" />
+                <span class="on_off"> </span>
+              </label>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </body>

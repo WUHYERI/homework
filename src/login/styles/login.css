@@ -37,7 +37,7 @@
   --ipTextColor: #121212;
 
   /* 미디어쿼리 중단점 */
-  --breakpointTablet: 768px;
+  --breakpointTablet: 768px; C:\Users\woohr\bootcamp\homework\public\favicon\likelion.svg
 }
 
 /* 폼스타일링 */
@@ -58,20 +58,28 @@ body {
 }
 
 /* 포커스 상태 설정 */
-:focus {
+input:focus {
   outline: none;
   box-shadow: none;
 }
 
-:focus-visible {
-  outline: 2px solid var(--focusColorOutline);
+input:focus-visible {
+  outline: 2px solid var(--inputFocusColorBorder);
   outline-offset: 2px;
+  background-color: var(--inputFocusColorBg);
 }
+
+/* 포커스 스타일 추가 */
+.on_off_label:focus-within {
+  border: 2px solid var(--focusColorOutline);
+}
+
+
 
 /* 컴포넌트 컨테이너 */
 .component_wrapper {
   width: calc(100% -40px);
-  margin: 0 auto;
+  margin: 0;
   padding: 0 20px;
   box-sizing: border-box;
 
@@ -83,7 +91,7 @@ body {
 /* 로고 컴포넌트 스타일링 */
 .main_logo {
   text-align: center;
-  margin-block: 2em;
+  margin: 2em;
 }
 
 /* 입력서식 컴포너트 스타일링 */
@@ -94,7 +102,7 @@ body {
   }
   input {
     display: block;
-    margin: 0 auto;
+    margin: 0;
     border: 1px solid var(--inputBorderColor);
     background-color: var(--inputBgColor);
     width: 100%;
@@ -110,7 +118,7 @@ body {
 [type='reset'] {
   font-size: var(--buttonFontSize);
   color: var(--buttonTextColor);
-  line-height: var(--buttonHeight);
+  height: var(--buttonHeight);
   background-color: var(--buttonBgColor);
   box-sizing: border-box;
   width: 100%;
@@ -129,16 +137,18 @@ label {
   opacity: 0;
 }
 
-/* 기본 체크박스 스타일링 */
-.form_checkbox {
-  label {
-    display: flex;
-    align-items: center;
-  }
+/* 공통 체크박스 스타일링 */
+label {
+  display: inline-flex;
+  align-items: center;
   img {
     display: flex;
     align-items: center;
     margin-right: var(--checkboxGap);
+  }
+  span {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -147,33 +157,18 @@ label {
   content: url(../assets/login_checked.svg);
 }
 
-/* 포커스 스타일 추가 */
-label:focus-within {
-  border: 2px solid var(--inputFocusColorBorder);
-}
 
 /* 온오프 체크박스 스타일링 */
-.form_on_off_checkbox {
-  display: flex;
-  align-items: center;
-  a {
-    text-decoration: none;
-    color: var(--fontColorBase);
-    margin-right: var(--marginTopSwitch);
-  }
-}
-.on_off_label {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-}
-/* 온오프 체크박스 클릭 시 텍스트 변경 */
-
-.on_off {
+a {
   display: inline-block;
+  line-height: 1;
   vertical-align: middle;
-  text-align: center;
+  text-decoration: none;
+  color: var(--fontColorBase);
+  margin-right: var(--marginTopSwitch);
 }
+
+/* 온오프 체크박스 클릭 시 텍스트 변경 */
 
 #form_on_off_checkbox_0:not(:checked) + .on_off::before {
   content: 'OFF';
@@ -183,4 +178,68 @@ label:focus-within {
 #form_on_off_checkbox_0:checked + .on_off::before {
   content: 'ON';
   color: var(--buttonBgColor);
+}
+
+/* login form */
+.naver_login_form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+/* 입력서식 */
+.login_input_wrapper {
+  > div {
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+}
+/* 로그인 버튼 */
+.login_button_wrapper {
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+/* 에외처리 */
+small {
+--spacing5:0.3125rem;
+--spacing20: 1.25rem;
+
+  display: none;
+  margin-top: var(--spacing-5);
+  padding-inline: var(--spacing-20);
+}
+
+input:user-invalid + small {
+  display: block;
+  color: red;
+}
+
+/* 로그인상태유지 체크박스 */
+[type='checkbox']#keep_logged_in_check:checked + img {
+  content: url(../assets/login_checked.svg);
+}
+
+/* IP보안 체크박스 */
+#IP_security_checkbox:not(:checked) + .on_off::before {
+  content: 'OFF';
+  color: var(--inputBorderColor);
+}
+
+#IP_security_checkbox:checked + .on_off::before {
+  content: 'ON';
+  color: var(--buttonBgColor);
+}
+
+/* option list */
+ul{
+  
+  li:first-child{
+    float: left;
+  }
+
+  li:last-child{
+    float: right;
+  }
 }
