@@ -1,3 +1,73 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.card {
+  text-align: center;
+  inline-size: 100%;
+  block-size: var(--size);
+  padding-top: var(--large-spacing);
+
+  background-image: url(../../apple/products/ipad_air.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .card_title {
+    h2 {
+      font-size: var(--large-text);
+      color: var(--white);
+      margin-bottom: var(--small-spacing);
+    }
+    p {
+      font-size: var(--base-text);
+      color: var(--white);
+      margin-bottom: var(--small-spacing);
+    }
+    span {
+      font-size: var(--base-text);
+      color: var(--gray);
+      margin-bottom: var(--small-spacing);
+    }
+  }
+  .link {
+    display: flex;
+    justify-content: center;
+    font-size: var(--small-text);
+    color: var(--blue-200);
+    margin: var(--small-spacing);
+
+    a {
+      border: 1px solid var(--blue-200);
+      border-radius: 999px;
+      margin-left: var(--small-spacing);
+      padding: var(--small-spacing);
+      color: currentColor;
+
+      &:first-child {
+        background-color: var(--blue-200);
+        color: var(--white);
+      }
+    }
+  }
+
+  &.white {
+    h2 {
+      color: var(--black);
+    }
+    p {
+      color: var(--black);
+    }
+
+    .link {
+      color: var(--black);
+      a {
+        border: 1px solid var(--black);
+        &:first-child {
+          background-color: var(--black);
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
