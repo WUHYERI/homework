@@ -8,11 +8,6 @@
   block-size: var(--size);
   padding-top: var(--large-spacing);
 
-  /* background-image: url(../../apple/products);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-
   .card_title {
     h2 {
       font-size: var(--large-text);
