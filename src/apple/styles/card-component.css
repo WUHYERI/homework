@@ -8,10 +8,10 @@
   block-size: var(--size);
   padding-top: var(--large-spacing);
 
-  background-image: url(../../apple/products/ipad_air.jpeg);
+  /* background-image: url(../../apple/products);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   .card_title {
     h2 {
@@ -22,12 +22,14 @@
     p {
       font-size: var(--base-text);
       color: var(--white);
-      margin-bottom: var(--small-spacing);
+      line-height: var(--line-normal);
     }
     span {
+      display: block;
+      margin: var(--small-spacing);
       font-size: var(--base-text);
       color: var(--gray);
-      margin-bottom: var(--small-spacing);
+      margin: var(--small-spacing);
     }
   }
   .link {
@@ -51,7 +53,7 @@
     }
   }
 
-  &.white {
+  &.light_theme {
     h2 {
       color: var(--black);
     }
